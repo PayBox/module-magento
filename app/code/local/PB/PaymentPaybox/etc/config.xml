@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <PB_PaymentPaybox>
+            <name>Paybox Payment</name>
+            <version>1.0.0</version>
+            <descr>
+                <ru_RU><![CDATA[Платёжный модуль PayBox. Позволяет использовать сервис приёма платежей PayBox (paybox.kz) на вашем Magento сайте.]]></ru_RU>
+                <en_US><![CDATA[PayBox Payment extension. Allows to use PayBox payment service (paybox.ru) on your Magento site.]]></en_US>
+            </descr>
+            <permanentlink>https://github.com/PayBox/module-magento</permanentlink>
+            <license>
+                <ru_RU><![CDATA[Creative Commons Attribution-ShareAlike 4.0 International Public License]]></ru_RU>
+                <en_US><![CDATA[Creative Commons Attribution-ShareAlike 4.0 International Public License]]></en_US>
+            </license>
+            <licenselink>http://creativecommons.org/licenses/by-sa/4.0/legalcode</licenselink>
+            <issueslink>https://github.com/PayBox/module-magento/issues</issueslink>
+        </PB_PaymentPaybox>
+    </modules>
+
+    <global>
+        <helpers>
+            <pbpaymentpaybox>
+                <class>PB_PaymentPaybox_Helper</class>
+            </pbpaymentpaybox>
+        </helpers>
+
+        <blocks>
+            <pbpaymentpaybox>
+                <class>PB_PaymentPaybox_Block</class>
+            </pbpaymentpaybox>
+        </blocks>
+
+        <models>
+            <pbpaymentpaybox>
+                <class>PB_PaymentPaybox_Model</class>
+                <resourceModel>pbpaymentpaybox_mysql4</resourceModel>
+            </pbpaymentpaybox>
+        </models>
+        <resources>
+            <pbpaymentpaybox_setup>
+                <setup>
+                    <module>PB_PaymentPaybox</module>
+                    <class>Mage_Sales_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </pbpaymentpaybox_setup>
+            <pbpaymentpaybox_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </pbpaymentpaybox_write>
+            <pbpaymentpaybox_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </pbpaymentpaybox_read>
+        </resources>
+
+        <sales>
+            <order>
+                <statuses>
+                    <waiting_paybox translate="label"><label>Waiting Robokassa payment</label></waiting_paybox>
+                    <paid_paybox translate="label"><label>Paid by Robokassa</label></paid_paybox>
+                    <error_paybox translate="label"><label>Error data from Robokassa</label></error_paybox>
+                </statuses>
+                <states>
+                    <new>
+                        <statuses>
+                            <waiting_paybox/>
+                            <error_paybox/>
+                        </statuses>
+                        <visible_on_front/>
+                    </new>
+                    <processing translate="label">
+                        <label>Processing</label>
+                        <statuses>
+                            <paid_paybox/>
+                        </statuses>
+                        <visible_on_front/>
+                    </processing>
+                </states>
+            </order>
+        </sales>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <pbpaybox>
+                        <class>PB_PaymentPaybox_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </pbpaybox>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+
+    <frontend>
+        <translate>
+            <modules>
+                <PB_PaymentPaybox>
+                    <files>
+                        <default>PB_PaymentPaybox.csv</default>
+                    </files>
+                </PB_PaymentPaybox>
+            </modules>
+        </translate>
+        <routers>
+            <pbpaymentpaybox>
+                <use>standard</use>
+                <args>
+                    <module>PB_PaymentPaybox</module>
+                    <frontName>pbpaymentpaybox</frontName>
+                </args>
+            </pbpaymentpaybox>
+        </routers>
+    </frontend>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <pbpaymentpaybox translate="title" module="pbpaymentpaybox">
+                                            <title>PayBox Payment Section</title>
+                                            <sort_order>400</sort_order>
+                                        </pbpaymentpaybox>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <PB_PaymentPaybox>
+                    <files>
+                        <default>PB_PaymentPaybox.csv</default>
+                    </files>
+                </PB_PaymentPaybox>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <payment>
+            <pbpaybox>
+                <active>0</active>
+                <title>Сервис приёма платежей PayBox</title>
+                <payment_text><![CDATA[Банковские карты, платежные терминалы, электронные деньги, интернет банкинги, пункты приема платежей - выберите любой удобный для вас способ оплаты.]]></payment_text>
+                <cart_refill>0</cart_refill>
+                <allowspecific>0</allowspecific>
+                <order_status>waiting_paybox</order_status>
+                <model>pbpaymentpaybox/method_pbpaybox</model>
+                <order_status>waiting_paybox</order_status>
+                <test_mode>0</test_mode>
+                <enable_log>1</enable_log>
+                <sInvDesc>Покупка в интернет магазине</sInvDesc>
+                <result_url>http://example.com/pbpaybox/status</result_url>
+                <success_url>http://example.com/pbpaybox/success</success_url>
+                <fail_url>http://example.com/pbpaybox/failure</fail_url>
+                <documentation_link>&lt;a href="https://github.com/PayBox/module-magento"&gt;https://github.com/PayBox/module-magento&lt;a&gt;</documentation_link>
+            </pbpaybox>
+        </payment>
+    </default>
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <PB_PaymentPaybox>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Sales />
+                <Mage_Payment />
+            </depends>
+        </PB_PaymentPaybox>
+    </modules>
+</config>

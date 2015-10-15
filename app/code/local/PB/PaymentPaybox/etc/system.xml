@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <pball translate="label">
+            <label>PayBox Extensions</label>
+            <sort_order>400</sort_order>
+        </pball>
+    </tabs>
+
+    <sections>
+        <pbpaymentpaybox translate="label" module="pbpaymentpaybox">
+            <label>PayBox Payment Module</label>
+            <tab>pball</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>300</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <info translate="label">
+                    <label>PayBox Payment Information</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <support_information>
+                            <frontend_model>pbpaymentpaybox/adminhtml_support</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </support_information>
+                    </fields>
+                </info>
+                <general translate="label comment" module="pbpaymentpaybox">
+                    <label>PayBox Payment Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <linktooptions translate="label comment">
+                            <label>Settings</label>
+                            <comment><![CDATA[Extension options available in System -> Configuration -> Sales -> Payment Methods]]></comment>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>pbpaymentpaybox/adminhtml_system_config_form_field_linktooptions</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </linktooptions>
+                    </fields>
+                </general>
+            </groups>
+        </pbpaymentpaybox>
+
+        <payment translate="label" module="pbpaymentpaybox">
+            <groups>
+                <pbpaybox translate="label" module="pbpaymentpaybox">
+                    <label>PayBox Payment Module</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <linktoinfo translate="label">
+                            <label>PayBox Payment</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>pbpaymentpaybox/adminhtml_system_config_form_field_linktoinfo</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </linktoinfo>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <payment_text translate="label">
+                            <label>Description</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </payment_text>
+                        <sort_order translate="label">
+                            <label>Sort order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+
+                        <heading_paybox translate="label">
+                            <label>PayBox Gateway options</label>
+                            <frontend_model>pbpaymentpaybox/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </heading_paybox>
+                        <test_mode translate="label comment">
+                            <label>Test Mode</label>
+                            <comment><![CDATA[If Enabled - module will connect PayBox gate in test mode. You can enable this option at any time.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </test_mode>
+                        <enable_log translate="label comment">
+                            <label>Debug Mode</label>
+                            <comment><![CDATA[If Enabled - technical information records into a log file /var/log/payment_paybox.log]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>115</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable_log>
+
+                        <sMerchantID translate="label comment">
+                            <label>Merchant ID</label>
+                            <comment><![CDATA[Merchant ID in PayBox account (merchant_id)]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </sMerchantID>
+                        <sSecretKey translate="label comment">
+                            <label>Secret Key</label>
+                            <comment><![CDATA[Secret Key in PayBox account (secret_key)]]></comment>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </sSecretKey>
+                        <sLang translate="label comment">
+                            <label>Language</label>
+                            <comment><![CDATA[Language on PayBox Payment website]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>pbpaymentpaybox/lang</source_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sLang>
+                        <sInvDesc translate="label comment">
+                            <label>Order description</label>
+                            <comment><![CDATA[Order description on PayBox Payment website]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sInvDesc>
+
+                        <callback_urls translate="label">
+                            <label>Callback URLs</label>
+                            <frontend_model>pbpaymentpaybox/adminhtml_system_config_form_field_callbackUrls</frontend_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </callback_urls>
+
+                        <heading_restrictions translate="label">
+                            <label>Restrictions</label>
+                            <frontend_model>pbpaymentpaybox/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>700</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </heading_restrictions>
+
+                        <allowspecific translate="label">
+                            <label>Payment from Applicable Countries</label>
+                            <frontend_type>allowspecific</frontend_type>
+                            <sort_order>710</sort_order>
+                            <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </allowspecific>
+                        <specificcountry translate="label">
+                            <label>Payment from Specific Countries</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>720</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <!--depends><allowspecific>1</allowspecific></depends-->
+                        </specificcountry>
+                        <!--<min_order_total translate="label">-->
+                            <!--<label>Minimum Order Total</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>730</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>0</show_in_store>-->
+                        <!--</min_order_total>-->
+                        <!--<max_order_total translate="label">-->
+                            <!--<label>Maximum Order Total</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>740</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>0</show_in_store>-->
+                        <!--</max_order_total>-->
+
+                        <heading_ordercart translate="label">
+                            <label>Order and Shopping Cart</label>
+                            <frontend_model>pbpaymentpaybox/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>810</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </heading_ordercart>
+                        <order_status translate="label">
+                            <label>New Order Status</label>
+                            <comment><![CDATA[Order will receive this status right after creation. Status will be changed the moment payment is received.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status_new</source_model>
+                            <sort_order>820</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status>
+                        <cart_refill translate="label comment">
+                            <label>Do not empty Cart</label>
+                            <comment><![CDATA[If Yes - Shopping cart will be refilled if payment failed.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>830</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cart_refill>
+                    </fields>
+                </pbpaybox>
+            </groups>
+        </payment>
+    </sections>
+</config>
+
+
+
+
