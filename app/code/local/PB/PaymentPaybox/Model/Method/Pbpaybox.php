@@ -228,6 +228,7 @@ class PB_PaymentPaybox_Model_Method_Pbpaybox extends Mage_Payment_Model_Method_A
             "pg_merchant_id" => $this->_sMerchantID,
             "pg_order_id" => $order->getIncrementId(),
             "pg_amount" => round($outSum, 2),
+            "pg_currency" => "KZT",
             "pg_description" => $this->_sInvDesc,
             "pg_user_contact_email" => $order->getCustomerEmail(),
             "pg_user_phone" => $phone,
