@@ -34,7 +34,7 @@ class PB_PaymentPaybox_GateController extends Mage_Core_Controller_Front_Action
 
         $lastOrderId = $session->getLastOrderId();
         if (empty($lastOrderId)) {
-            $helper->log("Error. Redirect to paybox.kz failed. No data in session about order.");
+            $helper->log("Error. Redirect to paybox.money failed. No data in session about order.");
             $this->getResponse()->setHeader('Content-type', 'text/html; charset=UTF8');
             $this->getResponse()->setBody($this->getLayout()->createBlock(self::MODULENAME.'/error')->toHtml());
             return;

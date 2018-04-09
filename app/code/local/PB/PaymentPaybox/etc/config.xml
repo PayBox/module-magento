@@ -5,8 +5,8 @@
             <name>Paybox Payment</name>
             <version>1.0.0</version>
             <descr>
-                <ru_RU><![CDATA[Платёжный модуль PayBox. Позволяет использовать сервис приёма платежей PayBox (paybox.kz) на вашем Magento сайте.]]></ru_RU>
-                <en_US><![CDATA[PayBox Payment extension. Allows to use PayBox payment service (paybox.ru) on your Magento site.]]></en_US>
+                <ru_RU><![CDATA[Платёжный модуль PayBox. Позволяет использовать сервис приёма платежей PayBox (paybox.money) на вашем Magento сайте.]]></ru_RU>
+                <en_US><![CDATA[PayBox Payment extension. Allows to use PayBox payment service (paybox.money) on your Magento site.]]></en_US>
             </descr>
             <permanentlink>https://github.com/PayBox/module-magento</permanentlink>
             <license>

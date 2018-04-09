@@ -56,7 +56,7 @@ class PB_PaymentPaybox_Model_Method_Pbpaybox extends Mage_Payment_Model_Method_A
 
     protected $_cartRefill;
 
-    protected $_gateUrl = "https://paybox.kz/payment.php";
+    protected $_gateUrl = "https://api.paybox.money/payment.php";
 
 
     protected $_configRead = false;

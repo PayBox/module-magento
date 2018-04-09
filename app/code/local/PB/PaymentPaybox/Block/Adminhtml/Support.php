@@ -33,7 +33,7 @@ class PB_PaymentPaybox_Block_Adminhtml_Support
         $moduleLicenseLink = $this->_getConfigValue($moduleNameId, 'licenselink') . $linkParameters;
         $moduleSupportLink = $this->_getConfigValue($moduleNameId, 'issueslink') . $linkParameters;
 
-        $logoLink = 'https://paybox.kz/assets/frontend/img/logo.png';
+        $logoLink = 'https://paybox.money/assets/frontend/img/logo.png';
 
         $html =
             '<style>
@@ -71,7 +71,7 @@ class PB_PaymentPaybox_Block_Adminhtml_Support
                 </tr>
                 <tr>
                     <td class="developer-label line">' . $helper->__('Support:') . '</td>
-                    <td class="developer-text line">' . $helper->__('Extension support is available through <a href="%s" target="_blank">issue tracking system</a> on GitHub. You will have to sign up to open a ticket.<br><br>Please, report all bugs and feature requests that are related to this extension.<br><br>In addition, all questions, comments and suggestions on the module, you can write us at <a href="mailto:support@paybox.kz">support@paybox.kz</a>.',
+                    <td class="developer-text line">' . $helper->__('Extension support is available through <a href="%s" target="_blank">issue tracking system</a> on GitHub. You will have to sign up to open a ticket.<br><br>Please, report all bugs and feature requests that are related to this extension.<br><br>In addition, all questions, comments and suggestions on the module, you can write us at <a href="mailto:support@paybox.money">support@paybox.money</a>.',
             $moduleSupportLink) . '</td>
                 </tr>
             </table>';
